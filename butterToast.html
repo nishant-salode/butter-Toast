@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./butterToast.js"></script>
+    <link href='./butterToast.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+        <h1>
+            Butter toast notification, welcomes you
+        </h1>
+        <!-- <div class="toast-container"></div> -->
+        <button onclick="display()">
+            Show butter toast in success theme..
+        </button>
+        
+<script>
+    function display(){
+        
+        butterToast.create({
+        type: randomNum(),
+        title: "Congratulations!",
+        text: "Your friend is added successfuly.",
+        timeout: "2000",
+     });
+     
+     function randomNum(){
+        let typeArr = ['success','info','danger','warning'];
+         console.log(typeArr,Math.floor(Math.random()*10/3));
+        return (typeArr[Math.floor(Math.random()*10/3)]);
+     }
+    }
+    
+</script>        
+</body>
+</html>
