@@ -97,17 +97,21 @@
         /**
          * Create body of toast
          */
-        var title = document.createElement("DIV");
-        title.setAttribute('id','toast-title' + uniqueToastIncremental);
-        title.setAttribute('class','toast-title');
-        title.innerHTML = params.title;
-        toast.appendChild(title); 
-
-        var message = document.createElement("P");
-        message.setAttribute('id','toast-message' + uniqueToastIncremental);
-        message.setAttribute('class','toast-message');
-        message.innerHTML = params.text;
-        toast.appendChild(message); 
+        if(!!params.title){
+            var title = document.createElement("DIV");
+            title.setAttribute('id','toast-title' + uniqueToastIncremental);
+            title.setAttribute('class','toast-title');
+            title.innerHTML = "<b>"+params.title;
+            toast.appendChild(title);     
+        }
+        if(!!params.text){
+            var message = document.createElement("P");
+            message.setAttribute('id','toast-message' + uniqueToastIncremental);
+            message.setAttribute('class','toast-message');
+            message.innerHTML = params.text;
+            toast.appendChild(message); 
+        }
+        
  
         
         // console.log(uniqueToastIncremental,params);
@@ -115,6 +119,9 @@
         toastContainer.prepend(toast);
          //hide toast after some delayed time
         butterToast.timeoutHide(uniqueToastIncremental,params.timeout);
+        toast.addEventListener('click', function (event) {
+            butterToast.timeoutHide(uniqueToastIncremental,100)       
+        });
      }
      butterToast.timeoutHide = function(id,timeInMs = 2000){
 
