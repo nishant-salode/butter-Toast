@@ -1,2 +1,12 @@
 # butter-Toast
-Toast notification library created on vanilla JS.
+
+### Simple toast notification library built on vanilla JS.
+
+How to use, example :
+
+        butterToast.create({
+        type: "success"|"warning"|"error"|"info",
+        title: "Congratulations!",
+        text: "Your friend is added successfuly.",
+        timeout: "2000"
+        });
