@@ -1,0 +1,77 @@
+.toast-container{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 14px;
+    width: 340px;
+    /* height: 100%; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    padding-right: 45px;
+  }
+  .toast-container .toast{
+    z-index: 99;
+    font-size: 12px;
+    width: 300px;
+    min-height: 50px;
+    margin: 10px 0 0 10px;
+    padding: 0 10px;
+    background: rgba(255, 255, 255, 0.616);
+    border: 2px groove;
+    border-radius: 10px;
+    border-left-width: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    animation-duration:  .3s;
+    animation-name: toastEntry;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    background: #dad3002e;
+  }
+  .toast-success{
+    border-color:  green !important;
+    background: #3aff7ff0 !important;
+  }
+  .toast-warning{
+    border-color:  rgb(255, 136, 0) !important;
+    background: #ffb717f2 !important;
+  }
+  .toast-danger{
+    border-color:  red !important;
+    background: #ff021ae6 !important
+  }
+  .toast-info{
+    border-color:  rgb(83, 83, 255) !important;
+    background: #7e7eff !important;
+  }
+  .toast-title{
+    padding: 10px 0;
+  }
+  .toast-message{
+    margin: 0 0 10px 0;
+  }
+  .toast-hide{
+    animation-duration:  .3s;
+    animation-name: toastExit;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  @keyframes toastEntry {
+    from {
+      transform: translate3d(400px, 0, 0);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes toastExit {
+    from {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+    to {
+      transform: translate3d(400px, 0, 0);
+      opacity: 0;
+    }
+  }
+  
